@@ -15,6 +15,7 @@ def algoritmo(texto, chave, fator):
         raise ValueError("A chave não pode ser vazia.")
 
     invalidos = set(c for c in texto + chave if c not in alfabeto)
+  
     if invalidos:
       raise ValueError(f"Os seguintes caracteres inválidos foram encontrados: {''.join(invalidos)}")
 
@@ -23,19 +24,14 @@ def algoritmo(texto, chave, fator):
       pos_k = alfabeto.index(chave[i % len(chave)])
       resultado += alfabeto[(pos_t + fator * pos_k) % tam_alfabeto]
 
-
-
     return resultado
-
 
 if __name__ == "__main__":
 
   texto = input("Digite o texto a ser cifrado: ")
   chave = input("Digite a chave de cifragem: ")
 
-
   try:
-
     print("Texto Original: ", texto)
 
     texto_cifrado = cifrar(texto, chave)
