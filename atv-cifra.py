@@ -9,9 +9,9 @@ def algoritmo(texto, chave, fator):
     resultado = ""
     tam_alfabeto = len(alfabeto)
 
-    if not texto.strip():
+    if not texto:
         raise ValueError("O texto não pode ser vazio")
-    if not chave.strip():
+    if not chave:
         raise ValueError("A chave não pode ser vazia.")
 
     invalidos = set(c for c in texto + chave if c not in alfabeto)
